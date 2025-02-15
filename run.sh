@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CUDA_VISIBLE_DEVICES="0" /usr/bin/python3 qwen_vl/train.py \
+CUDA_VISIBLE_DEVICES="0" /usr/bin/python3 ft_qwen_vl/train.py \
     --model_name_or_path "Qwen/Qwen2.5-VL-3B-Instruct" \
     --data_path "./data/demo.json" \
     --output_dir "./ckpts" \
@@ -12,7 +12,7 @@ CUDA_VISIBLE_DEVICES="0" /usr/bin/python3 qwen_vl/train.py \
     --batch_size 2
 
 
-# torchrun --standalone --nnodes=1 --nproc-per-node=2 qwen_vl/train.py \
+# torchrun --standalone --nnodes=1 --nproc-per-node=2 ft_qwen_vl/train.py \
 #     --model_name_or_path "Qwen/Qwen2.5-VL-3B-Instruct" \
 #     --data_path "./data/demo.json" \
 #     --output_dir "./ckpts" \
